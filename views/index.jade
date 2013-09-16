@@ -1,0 +1,92 @@
+extends layout
+
+block content
+  .fade
+  form.popup.em
+    label Choose frame sizes:
+    input.size.em_width(value="320", min="200", type="number", required)
+    span  x 
+    input.size.em_height(value="480", min="200", type="number", required)
+    br
+    label Webpage:
+    input.em_url(value="", type="url", required)
+    br
+    button Get the code
+    a.close Close
+    br
+    textarea.em_code.hide
+    a(href="http://jsfiddle.net/nikoloza/MNr4H/", target="_blank") Try the example
+
+  form.popup.lnk
+    label Choose frame sizes:
+    input.size.em_width(value="320", min="200", type="number", required)
+    span  x 
+    input.size.em_height(value="480", min="200", type="number", required)
+    br
+    label Webpage:
+    input.em_url(value="", type="url", required)
+    br
+    button Get the link
+    a.close Close
+    br
+    input.em_link.hide
+
+  form.popup.cust
+    label Choose frame sizes:
+    input.size.em_width(value="320", min="200", type="number", required)
+    span  x 
+    input.size.em_height(value="480", min="200", type="number", required)
+    br
+    button Go
+    a.close Close
+
+  .popup.cred
+    h1 Credits
+
+    p.thanks Special thanks for this great design stuff:
+      a(href="http://www.pixeden.com/psd-web-elements/flat-psd-browsers-set") http://www.pixeden.com/psd-web-elements/flat-psd-browsers-set
+      a(href="http://dribbble.com/shots/977830-Apple-devices-Flat-icons-PSD") http://dribbble.com/shots/977830-Apple-devices-Flat-icons-PSD
+    a.close.just Close
+
+  .popup.cont
+    h2 Nika Tomadze
+    p Front-end developer
+    p.social
+      a(href="https://www.facebook.com/nika.tomadze", target="_blank") Facebook
+      |  | 
+      a(href="https://twitter.com/nikatomadze", target="_blank") Twitter
+      |  | 
+      a(href="https://plus.google.com/112425523986940488534/", target="_blank") Google +
+      |  | 
+      a(href="https://github.com/nikoloza", target="_blank") Github
+    
+    a.close.just Close
+
+  section.browser
+    header.top_bar
+      .close
+      .minimize
+      .expand
+      .tab
+        .closetab
+      .tab.inactive.hide
+        .closetab
+      #fullscrn.full_screen
+    header.nav_bar
+      .first
+        .left
+        .right
+        .refresh
+      .second
+        .navigation
+          .url(contentEditable="true")
+            | http://
+            .domain sharethematch.com
+            | /
+          .fav
+      .third
+        .tool
+    .window
+      iframe#frame.frame(src="", width="100%", height="100%")
+
+  include footer

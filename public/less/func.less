@@ -1,0 +1,90 @@
+.shadow (@shadow) {
+	-webkit-box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	box-shadow: @shadow;
+}
+
+.radius (@radius) {
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+}
+
+.radiuses (@topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0) {
+	-webkit-border-top-left-radius: @topleft;
+	-moz-border-radius-topleft: @topleft;
+	border-top-left-radius: @topleft;
+
+	-webkit-border-top-right-radius: @topright;
+	-moz-border-radius-topright: @topright;
+	border-top-right-radius: @topright;
+
+	-webkit-border-bottom-right-radius: @bottomright;
+	-moz-border-radius-bottomright: @bottomright;
+	border-bottom-right-radius: @bottomright;
+
+	-webkit-border-bottom-left-radius: @bottomleft;
+	-moz-border-radius-bottomleft: @bottomleft;
+	border-bottom-left-radius: @bottomleft;
+}
+
+.transition (@property) {
+	-webkit-transition: @property;
+	-moz-transition: @property;
+	-ms-transition: @property;
+	-o-transition: @property;
+	transition: @property;
+}
+
+.filter (@property) {
+	-webkit-filter: @property;
+	-moz-filter: @property;
+	-ms-filter: @property;
+	-o-filter: @property;
+	filter: @property;
+}
+
+.overflow (@width: 10px) {
+	overflow-x: hidden;
+	
+	&::-webkit-scrollbar {
+		width: @width;
+	}
+ 
+	&::-webkit-scrollbar-track {
+		background: #fff;
+	}
+ 
+	&::-webkit-scrollbar-thumb {
+		.radius(10px);
+		background: #ccc;
+	}
+ 
+	&::-webkit-scrollbar-thumb:hover {
+		.radius(10px);
+		background: #ddd;
+	}
+
+	&::-webkit-scrollbar-thumb:window-inactive {
+		background: #eee; 
+	}
+}
+
+.sizing (@box: border-box){
+	box-sizing: @box;
+	-moz-box-sizing: @box;
+	-ms-box-sizing: @box;
+	-webkit-box-sizing: @box;
+	-khtml-box-sizing: @box;
+}
+
+.gradient (@top: #000, @bottom: #fff){
+	background: @top; /* Old browsers */
+	background: -moz-linear-gradient(top,  @top 0%, @bottom 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@top), color-stop(100%,@bottom)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @top 0%,@bottom 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @top 0%,@bottom 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @top 0%,@bottom 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  @top 0%,@bottom 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@top', endColorstr='@bottom',GradientType=0 ); /* IE6-9 */
+}

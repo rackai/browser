@@ -1,0 +1,93 @@
+.sprite {
+	background-image: url("/images/sprite.png");
+	background-color: transparent;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.tab {
+	.sprite;
+	background-position: 0 0;
+	width: 203px;
+	height: 24px;
+}
+
+.tab.inactive {
+	.sprite;
+	background-position: -1px -25px;
+	width: 203px;
+	height: 25px;
+}
+
+.full_screen {
+	.sprite;
+	background-position: -187px -55px;
+	width: 14px;
+	height: 15px;
+}
+
+.left {
+	.sprite;
+	background-position: -3px -57px;
+	width: 15px;
+	height: 13px;
+
+	&.inactive {
+		background-position: -22px -57px;
+	}
+}
+
+.right {
+	.sprite;
+	background-position: -60px -57px;
+	width: 15px;
+	height: 13px;
+
+	&.inactive {
+		background-position: -41px -57px;
+	}
+}
+
+.refresh {
+	.sprite;
+	background-position: -79px -57px;
+	width: 15px;
+	height: 15px;
+}
+
+.tool {
+	.sprite;
+	background-position: -166px -56px;
+	width: 13px;
+	height: 13px;
+}
+
+.fav {
+	.sprite;
+	background-position: -143px -56px;
+	width: 15px;
+	height: 15px;
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+	.sprite {
+		background-image: url("/images/sprite@2x.png");
+		background-size: 205px 100px;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		display: inline-block;
+	}
+
+	.tab,
+	.tab.inactive,
+	.full_screen,
+	.left,
+	.right,
+	.refresh,
+	.tool,
+	.fav {
+		.sprite;
+	}
+}

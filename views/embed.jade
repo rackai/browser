@@ -1,0 +1,32 @@
+extends layout
+
+block style
+  link(rel='stylesheet', href='/css/embed.css')
+
+block content
+  section.browser.embeded
+    header.top_bar
+      .close
+      .minimize
+      .expand
+      .tab
+        .closetab
+      .tab.inactive
+        .closetab
+      a.full_screen(target="_blank")
+    header.nav_bar
+      .first
+        .left
+        .right
+        .refresh
+      .second
+        .navigation
+          .url(contentEditable="true")
+            | http://
+            .domain sharethematch.com
+            | /
+          .fav
+      .third
+        .tool
+    .window
+      iframe#frame.frame(src="", width="100%", height="100%")
